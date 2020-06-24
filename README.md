@@ -1,5 +1,5 @@
 # Homework-3
-Random Password Generator
+# Build a Random Password Generator Using Javascript
 
 Create a portfolio site using responsive design to ensure the application will render well on a variety of devices and window or screen sizes. As a developer, you will likely be asked to create a mobile-first application or add responsive design to an existing application.
 
