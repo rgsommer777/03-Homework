@@ -1,9 +1,14 @@
 # Homework-3: Build a Random Password Generator Using Javascript
+Create an application that generates a random password based on user-selected criteria. The app will run in the browser and feature dynamically updated HTML and CSS powered by JavaScript code. It will also feature a clean and polished user interface and be responsive, ensuring that it adapts to multiple screen sizes.
 
-Create a portfolio site using responsive design to ensure the application will render well on a variety of devices and window or screen sizes. As a developer, you will likely be asked to create a mobile-first application or add responsive design to an existing application.
+## User Story
+AS AN employee with access to sensitive data
+I WANT to randomly generate a password that meets certain criteria
+SO THAT I can create a strong password that provides greater security
+
 
 # My Approach
-I accessed the Bootstrap CSS framework to build a responsive website using mobile first design principles. First step was to set up the three files using the html starter in Bootstrap"
+
 
 # How it Works
 
