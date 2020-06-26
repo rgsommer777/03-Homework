@@ -1,8 +1,11 @@
 // Assignment Code
-var generateBtn = document.querySelector("#generate");
+ var generateBtn = document.querySelector("#generate");
 
+
+  
 
 //  Create a function "checkPW" to validate charater choice between 8 and 128
+
 function checkPW() {
 //  Prompt user to enter number of desired password characters and store in variable "PwLength"
     var PwLength = prompt("Select number of characters for your password")
@@ -33,9 +36,14 @@ function checkPW() {
         checkPW()
   }  
 }
-//Run the checkPW function  
-checkPW()
+ //Add event listener to generate button
+generateBtn.addEventListener("click", checkPW);  //Run the checkPW function  
+
+
+//Prompt User for Password Criteria:
+  //1. Does Password Contain Upper Case Letters?
   
+
 
 
 
@@ -48,5 +56,5 @@ checkPW()
 
 //}
 
-// Add event listener to generate button
-//generateBtn.addEventListener("click", writePassword);
+
+ 
