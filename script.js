@@ -1,9 +1,14 @@
 var pwLength = "";
 var pwPool = "";
+var res = "";
 LC = "abcdefghijklmnopqrstuvwxyz";
 UC = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 Num = "1234567890";
 SpC = "!@#$%^&*()_+`-=?<>";
+var password ="";
+var newpassword ="";
+
+
 
 
 // Target the "Generate Password" button via the DOM
@@ -48,28 +53,28 @@ document.querySelector ("textarea").placeholder = "";
 
 function buildPwPool()
 {
-  var isLC = confirm ("Should your password contain lower case letters?");
+    isLC = confirm ("Should your password contain lower case letters?");
       if (isLC == true) {
         pwPool=(LC)
       console.log ("includes LC",pwPool);
     } else {
-      console.log ("no LC");
+      console.log ("no LC",pwPool);
     } 
-    var isUC = confirm ("Should your password contain upper case letters?");
+    isUC = confirm ("Should your password contain upper case letters?");
       if (isUC == true) {
         pwPool=(pwPool + UC);
       console.log ("includes UC",pwPool);
     } else {
       console.log ("no UC",pwPool);
     } 
-    var isNum = confirm ("Should your password contain numbers?");
+    isNum = confirm ("Should your password contain numbers?");
       if (isNum == true) {
         pwPool=(pwPool + Num);
       console.log ("includes Numbers",pwPool);
     } else {
       console.log ("no Numbers",pwPool);
     } 
-    var isSpC = confirm ("Should your password contain special characters?");
+    isSpC = confirm ("Should your password contain special characters?");
       if (isSpC == true) {
         pwPool=(pwPool + SpC);
       console.log ("includes Special Characters",pwPool);
@@ -90,7 +95,7 @@ function buildPwPool()
  buildPwPool()
 
     
-//Generate the password randomly and 
+//Generate the password randomly 
 let password ="";
 
  for (var i=0; i<= pwLength-1; i++){
@@ -101,39 +106,88 @@ let password ="";
 
 // Return the first characters of the random password (up to the chosen password length)
 pwPool.slice(0,pwLength)
-document.querySelector ("textarea").placeholder = password;
+
   
 
-    var LCArray = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
-    var UCArray = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
-    var NumArray = ['0','1','2','3','4','5','6','7','8','9']
-    var SpCArray = ['!','@','#','$','%','^','&','*','(',')','_','+','`','-','=','?','<','>','"'] 
+    // var LCArray = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+    // var UCArray = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+    // var NumArray = ['0','1','2','3','4','5','6','7','8','9']
+    //var SpCArray = ['!','@','#','$','%','^','&','*','(',')','_','+','`','-','=','?','<','>','"'] 
     
-    
+// }
     // Setup
     //console.log("LCArray: " + LCArray.join(","));
     
-    // Test password for inclusion of desired characters
-    if (new RegExp(LCArray.join("|")).test(password)) {
-        console.log("Valid for Lower Case Inclusion as pw= '" + password + "'");
+    // Test password for inclusion of lower case alphabet
+      // var patt = RegExp("[0-9]");
+      // res = patt.test(password);
+     
+    // Test password for inclusion of lower case alphabet  
+    //Create a function to swap in a random target character from source data type to replace target data type 
+    
+      var re = new RegExp('[0-9]');
+      if (re.test(password)) {
+        console.log("Valid for numbers");
       } else {
-        console.log("INVALID for Lower Case Inclusion as pw = '" + password + "'");
-      }
-    if (new RegExp(UCArray.join("|")).test(password)) {
-        console.log("Valid for Upper Case Inclusion as pw= '" + password + "'");
+        console.log("Invalid for numbers");
+      } 
+      var re = new RegExp('[A-Z]');
+      if (re.test(password)) {
+        console.log("Valid for upper case");
       } else {
-        console.log("INVALID for Upper Case Inclusion as pw = '" + password + "'");
+        console.log("Invalid for upper case");
       }
-    if (new RegExp(NumArray.join("|")).test(password)) {
-        console.log("Valid for Number Inclusion as pw= '" + password + "'");
+      var re = new RegExp('[a-z]');
+      if (re.test(password)) {
+        console.log("Valid for lower case");
       } else {
-        console.log("INVALID for Number Inclusion as pw = '" + password + "'");
+        console.log("Invalid for lower case");
       }
-    if (new RegExp(SpCArray.join("|")).test(password)) {
-        console.log("Valid for Special Character Inclusion as pw= '" + password + "'");
+      var re = new RegExp('[!,@,#,$,%,^,&,*,(,),_,+,`,-,=,?,<,>,]');
+      if (re.test(password)) {
+        console.log("Valid for special characters");
       } else {
-        console.log("INVALID for Special Character Inclusion as pw = '" + password + "'");
+        console.log("Invalid for special characters");
       }
-
-
+    
+    if (isNum=true) {
+    test4Num()  
+    
+    
+    function randomSwapper(password,Source) {
+      pwRandNum = Math.floor((Math.random() * password.length))+1; //Computes a random number between 1 and source string length
+      pwSlicer = pwRandNum -1 ;
+      pwSlice = password.replace(pwSlicer,pwRandNum);
+      pwRandChr = password.charAt(pwSlicer);
+      srcRandNum = Math.floor((Math.random() * Source.length))+1; //Computes a random number between 1 and source string length
+      srcSlicer = srcRandNum -1;
+      srcSlice = Source.replace(srcSlicer,srcRandNum);
+      srcRandChr = Source.charAt(srcSlicer);
+      newpw = password.replace(pwRandChr,srcRandChr);
+      
+     
+      }
+    function test4Num() {  
+        var re = new RegExp('[0-9]');
+        if (re.test(password)) {
+          console.log("Valid for numbers");
+        } else {
+          console.log("Invalid for numbers");
+          randomSwapper(password,Num);
+          password = newpw;
+          
+          test4Num()
+        }
+   // testPwValidity()
+        document.querySelector ("textarea").placeholder = password;    
+  //document.querySelector ("textarea").placeholder = password;    
     }
+ 
+    // var re = new RegExp('[0-9]');
+    // if (re.test(password)) {
+    //   console.log("Valid for numbers");
+    // } else {
+    //   console.log("Invalid for numbers");
+  }
+  
+}
