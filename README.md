@@ -38,8 +38,8 @@ SO THAT I can create a strong password that provides greater security
 
 ## Files Included
 
-index.html
-contact.html
+index.html<br>
+contact.html<br>
 portfolio.html
 
 ## What I Learned
