@@ -47,7 +47,7 @@ I learnd a lot about manipulating strings and how to randomize string elements. 
 
 (NOTE: I got everything working up until step 5. Still having some issues with the validation and so have commented most of this out for now. The "randomSwapper" is swapping in when it shouldn't so I was in progress of continuing to de-bug at time of submission).
 
-Deployed the app to my GitHub repository:
-GitHub link to project file repo: https://github.com/rgsommer777/03-Homework
+Deployed the app to my GitHub repository:<br>
+GitHub link to project file repo: https://github.com/rgsommer777/03-Homework <br>
 GitHub link to hosted page: https://rgsommer777.github.io/03-Homework/
   
